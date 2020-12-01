@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Travel{% endblock  %}
+
+{% block body %}
+<div class="container">
+<h1 class="text-center">Travel site</h1>
+<div class="row">
+        {% for product in  products  %}
+            <div class="card col-5 m-auto">
+                <img src="{{ product.image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <ul class="text-info">
+                        <li>{{ product.name }}</li>
+                        <li>{{ product.price }}</li>
+                        <li>{{ product.description}}</li>
+                </ul>
+             
+                    <a href="/details/{{product.id}}" class="btn btn-info">description</a>
+                </div>
+            </div>
+                
+        {% endfor %}
+      </div>  
+    </div>     
+{% endblock %}
